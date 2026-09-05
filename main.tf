@@ -17,3 +17,24 @@ module "vpc"{
     priavte_rt_cidr = "0.0.0.0/0"
     private_rt_name = "private-rt"
 }
+
+module "sg"{
+    source = "./module/sg"
+    sg_name = "my-sg"
+    ssh_port = 22
+    protocol = "tcp"
+    cidr = "0.0.0.0/0"
+    http_port = 80
+    egress_port = 0
+    egress_protocol = "-1"
+}
+
+module "ec2"{
+    source = "./module/ec2"
+    ami = "ami-01a00762f46d584a1"
+    instance_type = "t3.micro"
+    key_name = "mumbai"
+    vpc_id = module.vpc.vpc_id
+    public_subnet_id = module.vpc.subnet_id
+    sg_id = module.sg.sg_id
+}
