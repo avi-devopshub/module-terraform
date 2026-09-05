@@ -69,7 +69,7 @@ resource "aws_route_table" "private_rt"{
         cidr_block = var.priavte_rt_cidr
         gateway_id = aws_nat_gateway.nat.id
     }
-    tags{
+    tags = {
         Name = var.private_rt_name
     }
 }
