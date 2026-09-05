@@ -1,4 +1,19 @@
 module "vpc"{
     source = "./module/vpc"
-    
+    my_vpc_cidr = "10.0.0.0/16"
+    vpc_name = "my_vpc"
+    public_subnet_cidr = "10.0.0.0/20"
+    public_subnet_name = "public-subnet"
+    private_subnet_cidr = "10.0.16.0/20"
+    private_subnet_name = "private-subnet"
+    igw_name = "IGW"
+    public_az = "ap-south-1a"
+    private_az = "ap-south-1b"
+    eip_domain = "vpc"
+    eip_name = "nat-eip"
+    nat_name = "my-nat"
+    public_rt_cidr = "0.0.0.0/0"
+    public_rt_name = "public-rt"
+    priavte_rt_cidr = "0.0.0.0/0"
+    private_rt_name = "private-rt"
 }
