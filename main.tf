@@ -24,7 +24,7 @@ module "sg"{
     sg_name = "my-sg"
     ssh_port = 22
     protocol = "tcp"
-    cidr = "0.0.0.0/0"
+    cidr = ["0.0.0.0/0"]
     http_port = 80
     egress_port = 0
     egress_protocol = "-1"
