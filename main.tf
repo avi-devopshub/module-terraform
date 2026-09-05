@@ -38,3 +38,7 @@ module "ec2"{
     public_subnet_id = module.vpc.public_subnet_id
     sg_id = module.sg.sg_id
 }
+
+module "s3"{
+    bucket_name = "avinash-bucket-05092026"
+}
