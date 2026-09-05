@@ -14,6 +14,3 @@ variable "public_rt_cidr" {}
 variable "public_rt_name" {}
 variable "priavte_rt_cidr" {}
 variable "private_rt_name" {}
-
-
-
