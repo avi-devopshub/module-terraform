@@ -33,7 +33,7 @@ resource "aws_internet_gateway" "igw"{
 }
 #EIP
 resource "aws_eip" "eip"{
-    domain = var.eip-domain
+    domain = var.eip_domain
     tags = {
         Name = var.eip_name
     }
@@ -75,6 +75,6 @@ resource "aws_route_table" "private_rt"{
 }
 #Private Route Table Association
 resource "aws_route_table_association" "private_association"{
-    route_table_id = aws_route_table.private_rt_id
+    route_table_id = aws_route_table.private_rt.id
     subnet_id = aws_subnet.private_subnet.id
 }
