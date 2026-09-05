@@ -5,5 +5,6 @@ variable "cidr" {}
 variable "http_port" {}
 variable "egress_port" {}
 variable "egress_protocol" {}
+variable "vpc_id" {}
 
 
