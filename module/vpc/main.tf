@@ -15,7 +15,7 @@ resource "aws_subnet" "public_subnet"{
     }
 }
 #Private Subnet
-resource "aws_subnet" "private_subnet_name"{
+resource "aws_subnet" "private_subnet"{
     vpc_id = aws_vpc.my_vpc.id
     cidr_block = var.private_subnet_cidr
     availability_zone = var.public_az
